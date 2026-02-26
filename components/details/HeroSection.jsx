@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ActionButtons from "../ActionsButtons";
+import { BLUR_DATA_URL } from "@/utils/data-util";
 
 const HeroSection = ({ event }) => {
   return (
@@ -13,7 +14,7 @@ const HeroSection = ({ event }) => {
           height={900}
           quality={90}
           placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+          blurDataURL={BLUR_DATA_URL}
         />
       </div>
 

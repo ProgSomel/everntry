@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import SignInOut from "./auth/SignInOut";
 
 export default function Navbar() {
   return (
@@ -12,6 +13,9 @@ export default function Navbar() {
         </div>
 
         <ul className="flex gap-4 text-[#9C9C9C]">
+          <li>
+            <SignInOut />
+          </li>
           <li>About</li>
           <li>Contact Us</li>
         </ul>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import ActionsButtons from "../ActionsButtons";
+import { BLUR_DATA_URL } from "@/utils/data-util";
 
 export default function EventCard({ event }) {
   return (
@@ -13,7 +14,7 @@ export default function EventCard({ event }) {
         className="w-full"
         quality={90}
         placeholder="blur"
-        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+        blurDataURL={BLUR_DATA_URL}
       />
 
       <div className="p-3">
