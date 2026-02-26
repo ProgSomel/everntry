@@ -1,6 +1,11 @@
 import Link from "next/link";
 import RegisterForm from "@/components/auth/RegisterForm";
 
+export const metadata = {
+  title: "Register",
+  description: "Create a free Eventry account to discover and join events near you.",
+};
+
 export default function Register() {
   return (
     <section className="h-screen grid place-items-center">

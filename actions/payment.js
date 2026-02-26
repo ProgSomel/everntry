@@ -16,6 +16,9 @@ export async function submitPayment(_prevState, formData) {
   const event = await getEventById(eventId);
   if (!event) return { error: "Event not found." };
 
+  const alreadyGoing = event.going_ids.map(String).includes(String(userId));
+  if (alreadyGoing) return { error: "You have already confirmed attendance for this event." };
+
   const token = await createConfirmationToken(eventId, userId);
 
   const confirmUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/confirm-going?token=${token}`;

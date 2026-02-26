@@ -1,6 +1,18 @@
 import PaymentForm from "@/components/payments/paymentForm";
 import { getEventById } from "@/db/queries";
 
+export async function generateMetadata({ params }) {
+  const { eventId } = await params;
+  const event = await getEventById(eventId);
+
+  if (!event) return { title: "Payment" };
+
+  return {
+    title: `Payment — ${event.name}`,
+    description: `Complete your payment to confirm attendance for ${event.name}.`,
+  };
+}
+
 export default async function PaymentPage({ params }) {
   const { eventId } = await params;
   const event = await getEventById(eventId);

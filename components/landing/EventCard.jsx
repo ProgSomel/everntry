@@ -2,10 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import ActionsButtons from "../ActionsButtons";
 import { BLUR_DATA_URL } from "@/utils/data-util";
+import EventSchemaScript from "@/components/metaData/EventSchemaScript";
 
 export default function EventCard({ event }) {
   return (
     <div className="overflow-hidden rounded-md bg-[#242526]">
+      <EventSchemaScript event={event} />
       <Image
         src={event.imageUrl}
         alt={event.name}

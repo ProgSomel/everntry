@@ -1,6 +1,11 @@
 import PaymentForm from "@/components/payments/paymentForm";
 import React from "react";
 
+export const metadata = {
+  title: "Payment",
+  description: "Complete your payment to confirm event attendance.",
+};
+
 export default function PaymentPage() {
   return (
     <section className="container">

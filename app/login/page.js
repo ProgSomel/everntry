@@ -1,6 +1,11 @@
 import Link from "next/link";
 import LoginForm from "@/components/auth/LoginForm";
 
+export const metadata = {
+  title: "Sign In",
+  description: "Sign in to your Eventry account to discover and join events.",
+};
+
 const LoginPage = () => {
   return (
     <section className="h-screen grid place-items-center">
