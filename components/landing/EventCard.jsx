@@ -28,7 +28,7 @@ export default function EventCard({ event }) {
           <span>{event.going_ids.length} Going</span>
         </div>
 
-        <ActionsButtons />
+        <ActionsButtons event={event} />
       </div>
     </div>
   );

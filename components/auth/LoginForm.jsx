@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { login } from "@/actions/auth";
 import { useAuth } from "@/app/hooks/useAuth";
 
@@ -9,13 +9,15 @@ export default function LoginForm() {
   const [state, formAction, isPending] = useActionState(login, null);
   const { setAuth } = useAuth();
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     if (state?.user) {
       setAuth(state.user);
-      router.push("/");
+      const callbackUrl = searchParams.get("callbackUrl") || "/";
+      router.push(callbackUrl);
     }
-  }, [state, router, setAuth]);
+  }, [state, router, setAuth, searchParams]);
 
   return (
     <form className="login-form" action={formAction}>

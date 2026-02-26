@@ -47,5 +47,5 @@ export async function login(_prevState, formData) {
   const isValid = await bcrypt.compare(password, user.password);
   if (!isValid) return { error: "Invalid password." };
 
-  return { user: { name: user.name, email: user.email } };
+  return { user: { id: user.id, name: user.name, email: user.email } };
 }
